@@ -36,7 +36,7 @@ O cliente Aria.net operava seu portal em instâncias **Amazon EC2** (t3.medium).
 
 ### 🔹 Fase 3: Segurança e Políticas de Bucket (Compliance)
 *Implementação de Bucket Policies restritivas via Terraform (Least Privilege).*
-![Terraform V](img/Terraform%20V.png)
+![Terraform V](img/Terraform%20VI.png)
 
 ---
 
