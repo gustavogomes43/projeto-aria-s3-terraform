@@ -44,6 +44,8 @@ O cliente Aria.net operava seu portal em instâncias **Amazon EC2** (t3.medium).
 
 ### 🔹 Fase 4: Validação Final (Portal Aria.net Live)
 *O resultado: Infraestrutura moderna, segura e extremamente econômica.*
+![Terraform I](img/Terraform%20VIII.png)
+![Terraform I](img/Terraform%20VII.png)
 ![Site Final](img/image_b791f0.png.png)
 
 ---
