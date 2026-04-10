@@ -7,56 +7,54 @@ Este repositório documenta a implementação de uma solução de hosting de alt
 ## 🎯 O Desafio (Business Case)
 O cliente Aria.net operava seu portal em instâncias **Amazon EC2** (t3.medium). Esta abordagem gerava custos fixos elevados, necessidade de manutenção constante (patching de SO) e complexidade para escalar. 
 
-**A Solução:** Migração para uma **Arquitetura Serverless** de Static Website Hosting, eliminando a gerência de servidores e reduzindo o **TCO (Total Cost of Ownership)**.
+**A Solução:** Migração para uma **Arquitetura Serverless** de Static Website Hosting, eliminando a gerência de servidores e reduzindo o **TCO (Total Cost of Ownership)** em aproximadamente **98%**.
 
 ---
 
 ## 🛠️ Stack Tecnológica & Decisões Técnicas
 
-| Ferramenta | Aplicação | Justificativa Técnica |
-| :---: | :--- | :--- |
-| **Amazon S3** | Storage & Hosting | Alta durabilidade (11 noves) e custo-benefício imbatível para conteúdos estáticos. |
-| **Terraform** | IaC (Infra as Code) | Garante que a infraestrutura seja imutável, replicável e livre de erros manuais. |
-| **AWS CLI** | Gestão de Recursos | Utilizado para automação de deploy e sincronização de artefatos. |
+| Ferramenta | Ícone | Justificativa Técnica |
+| :--- | :---: | :--- |
+| **Amazon S3** | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" width="45"> | Hosting de objetos com durabilidade de 11 noves e custo-benefício imbatível. |
+| **Terraform** | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/terraform/terraform-original.svg" width="45"> | Provisionamento via IaC para garantir imutabilidade e evitar o "clique-ops". |
 
 ---
 
 ## 📈 Impacto de Negócio e FinOps
-* **Redução de Custos:** Economia estimada de **~98%** em comparação ao ambiente anterior em EC2.
-* **Manutenção Zero:** Sem servidores para atualizar, o foco da equipe fica 100% no código da aplicação.
-* **Escalabilidade Nativa:** Capacidade de suportar picos de tráfego sem intervenção humana.
-
----
-
-## 🔒 Segurança e Governança via Código
-Diferente de configurações manuais, este projeto implementa segurança por padrão:
-* **Public Access Block:** Configurado via Terraform para evitar exposição acidental de dados sensíveis.
-* **Least Privilege:** Bucket Policy desenhada para permitir apenas a leitura pública necessária para o site (`s3:GetObject`).
+* **Redução de Custos:** Saída de um modelo de custo fixo (EC2) para um modelo *Pay-as-you-go* (S3).
+* **Manutenção Zero:** Infraestrutura 100% gerenciada pela AWS, liberando a equipe para tarefas core.
+* **Escalabilidade:** Performance de baixa latência nativa, sem necessidade de Load Balancers complexos.
 
 ---
 
 ## 📸 Galeria de Engenharia (Case Study)
 
-### Fase 1: Planejamento e Init (IaC Workflow)
-O processo inicia com a validação do código Terraform, garantindo que o plano de execução esteja alinhado com as necessidades de negócio.
+### 🔹 Fase 1: Planejamento e Init (IaC Workflow)
+*Validação do plano de execução e integridade do código.*
 <img src="img/Terraform%20I.png" width="100%">
 
-### Fase 2: Configuração de Variáveis e Outputs
-Automação na extração do Endpoint gerado pela AWS, facilitando o processo de entrega contínua.
+---
+
+### 🔹 Fase 2: Automação e Outputs
+*Extração automatizada do endpoint público para entrega contínua.*
 <img src="img/Terraform%20IV.png" width="100%">
 
-### Fase 3: Segurança e Políticas de Bucket
-Implementação da blindagem do bucket, garantindo que o portal esteja online, mas protegido contra acessos não autorizados.
+---
+
+### 🔹 Fase 3: Segurança e Políticas de Bucket (Compliance)
+*Implementação de Bucket Policies restritivas via Terraform (Least Privilege).*
 <img src="img/Terraform%20V.png" width="100%">
 
-### Fase 4: Validação Final (Portal Online)
-O resultado final: infraestrutura moderna, segura e com performance de baixa latência entregue via automação.
+---
+
+### 🔹 Fase 4: Validação Final (Portal Aria.net Live)
+*O resultado: Infraestrutura moderna, segura e extremamente econômica.*
 <img src="img/image_b791f0.png.png" width="100%">
 
 ---
 
 ## 🏁 Conclusão
-O projeto **Aria.net** demonstra como a escolha correta de serviços de nuvem e a automação via código podem transformar a agilidade de um negócio, otimizando recursos financeiros e operacionais.
+O projeto **Aria.net** prova que a simplicidade técnica, quando bem executada via automação, é o caminho mais curto para a eficiência operacional na Nuvem.
 
 ---
-*Documentação desenvolvida por Gustavo Gomes para fins de portfólio técnico.*
+*Documentação desenvolvida por Gustavo Gomes | AWS Cloud Portfolio*
