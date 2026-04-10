@@ -5,8 +5,8 @@ Este repositório documenta a implementação de uma infraestrutura de hospedage
 ---
 
 ## 🎯 Finalidade e Solução
-**A Dor do Cliente:** Necessidade de hospedar um portal institucional com alta demanda de acesso, mas sem orçamento para gerenciar servidores (EC2), patches de segurança ou custos de licenciamento.
-**A Solução:** Arquitetura **Serverless** utilizando Static Website Hosting. A infraestrutura é escalável por definição e elimina a necessidade de manutenção de sistema operacional.
+**A Dor do Cliente:** Necessidade de hospedar um portal institucional com alta demanda de acesso, mas sem orçamento para gerenciar servidores (EC2) ou custos de licenciamento.
+**A Solução:** Arquitetura **Serverless** utilizando Static Website Hosting. A infraestrutura é escalável por definição e elimina a manutenção de SO.
 
 ---
 
@@ -14,16 +14,8 @@ Este repositório documenta a implementação de uma infraestrutura de hospedage
 
 | Ícone | Ferramenta | Justificativa |
 | :---: | :--- | :--- |
-| <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" width="35"> | **Amazon S3** | Durabilidade de 99.999999999% (11 noves) e custo-benefício imbatível para conteúdo estático. |
-| <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/terraform/terraform-original.svg" width="35"> | **Terraform** | Garante que as permissões de acesso (Bucket Policies) sejam aplicadas de forma idêntica em qualquer ambiente. |
-
----
-
-## 📈 Benefícios e Resultados (Foco em FinOps)
-
-* **Redução de Custos (S3 vs EC2):** Migrar de uma instância t3.medium para S3 gera uma **economia de ~98%** em custos mensais.
-* **Escalabilidade Infinita:** A solução suporta picos de milhares de acessos simultâneos sem nenhuma configuração manual.
-* **Manutenção Zero:** Sem servidores para atualizar, o foco da equipe fica 100% no código da aplicação.
+| <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" width="35"> | **Amazon S3** | Durabilidade de 99.999999999% e custo-benefício imbatível. |
+| <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/terraform/terraform-original.svg" width="35"> | **Terraform** | Garante que as permissões de acesso sejam aplicadas de forma idêntica via IaC. |
 
 ---
 
@@ -47,10 +39,9 @@ Este repositório documenta a implementação de uma infraestrutura de hospedage
 
 ---
 
-## 📊 Métricas de Sucesso
-* **Disponibilidade:** 99.99% garantida pelo SLA do Amazon S3.
-* **Segurança:** Bloqueio de acesso público a nível de conta ativado via IaC.
-* **Time-to-Market:** Deploy de novos ambientes em menos de 2 minutos.
+## 📈 Benefícios e Resultados
+* **Redução de Custos:** Economia de ~98% comparado a instâncias EC2.
+* **Manutenção Zero:** Foco 100% no conteúdo, zero preocupação com patches.
 
 ---
 *Este projeto demonstra o poder do Serverless para otimização de custos e performance.*
