@@ -25,6 +25,8 @@ O cliente Aria.net operava seu portal em instâncias **Amazon EC2** (t3.medium).
 ### 🔹 Fase 1: Planejamento e Init (IaC Workflow)
 *Validação do plano de execução e integridade do código.*
 ![Terraform I](img/Terraform%20I.png)
+![Terraform I](img/Terraform%20II.png)
+![Terraform I](img/Terraform%20III.png)
 
 ---
 
