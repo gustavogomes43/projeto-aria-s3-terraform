@@ -17,7 +17,11 @@ Cenário Anterior: O cliente operava instâncias EC2 gerenciadas manualmente (SS
 
 Solução FinOps: Ao migrar para S3, implementamos o conceito de custo zero em ociosidade. A infraestrutura agora escala de forma invisível, suportando picos de tráfego sem intervenção humana e com segurança nativa.
 
-**Arquitetura Implementada:**
+**🏗️ Arquitetura de Modernização & FinOps**
+A imagem abaixo ilustra a transformação do ambiente legado para a solução moderna:
+
+![Arquitetura de Modernização e FinOps](pasta/para/sua/imagem_11.png)
+
 * **Engine de Hosting:** Amazon S3 configurado para entrega de conteúdo estático.
 * **Provisionamento:** Terraform com gerenciamento de estado (State Management).
 * **Segurança:** Implementação de políticas de acesso restritivas (Bucket Policies) e bloqueio de acesso público indevido via código.
