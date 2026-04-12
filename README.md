@@ -1,4 +1,4 @@
-# 🎵 Projeto Aria.net: Modernização e Cloud Cost Optimization (FinOps)
+# Projeto Aria.net: Modernização e Cloud Cost Optimization (FinOps)
 
 [![Terraform](https://img.shields.io/badge/Terraform-1.x-623CE4?logo=terraform)](https://www.terraform.io/)
 [![AWS S3](https://img.shields.io/badge/AWS-S3_Serverless-FF9900?logo=amazonaws)](https://aws.amazon.com/s3/)
