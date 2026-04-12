@@ -65,11 +65,15 @@ O resultado final é um portal de alta performance, servido globalmente e com re
 O que esta imagem mostra: O portal Aria.net operando em produção. O site agora carrega de forma mais rápida devido à baixa latência do S3 e possui um custo de manutenção técnica próximo de zero, permitindo que a equipe foque em melhorias de produto em vez de manutenção de servidores.
 ![Site Live](img/image_b791f0.png.png)
 
-Métrica,Antes (EC2),Depois (S3 Serverless),Impacto
-Custo Mensal,Médio/Alto (Fixo),Próximo a zero (Variável),~98% de redução
-Manutenção,Patching e Updates,Totalmente Gerenciado,Zero-Ops
-Escalabilidade,Manual / Auto Scaling,Nativa e Infinita,Alta Disponibilidade
-Deploy,Manual via SSH,Automatizado via IaC,Agilidade e Segurança
+## 📈 Resultados Alcançados (FinOps & DevOps)
+
+| Métrica | Antes (EC2) | Depois (S3 Serverless) | Impacto |
+| :--- | :--- | :--- | :--- |
+| **Custo Mensal** | Médio/Alto (Fixo) | Próximo a zero (Variável) | **~98% de redução** |
+| **Manutenção** | Patching e Updates | Totalmente Gerenciado | **Zero-Ops** |
+| **Escalabilidade** | Manual / Auto Scaling | Nativa e Infinita | **Alta Disponibilidade** |
+| **Deploy** | Manual via SSH | Automatizado via IaC | **Agilidade e Segurança** |
+
 ---
 
 ## 🧠 Lições Aprendidas e Troubleshooting
