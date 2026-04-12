@@ -1,59 +1,68 @@
-# 🎵 Projeto Aria.net: Arquitetura Serverless com S3 & Terraform
+# 🎵 Projeto Aria.net: Modernização e Cloud Cost Optimization (FinOps)
 
-Este repositório documenta a implementação de uma solução de hosting de alta performance para o portal **Aria.net**, utilizando **Amazon S3** e **Terraform**. O foco principal foi a modernização de infraestrutura com foco em **eficiência financeira (FinOps)**.
+[![Terraform](https://img.shields.io/badge/Terraform-1.x-623CE4?logo=terraform)](https://www.terraform.io/)
+[![AWS S3](https://img.shields.io/badge/AWS-S3_Serverless-FF9900?logo=amazonaws)](https://aws.amazon.com/s3/)
+[![Status](https://img.shields.io/badge/Status-Concluído-success)](#)
 
----
+## 📝 Visão Geral
+O projeto **Aria.net** consistiu na migração estratégica de um portal web de uma arquitetura legada baseada em instâncias EC2 para uma solução **100% Serverless** utilizando **Static Website Hosting no Amazon S3**. 
 
-## 🎯 O Desafio (Business Case)
-O cliente Aria.net operava seu portal em instâncias **Amazon EC2** (t3.medium). Esta abordagem gerava custos fixos elevados e necessidade de manutenção constante.
-
-**A Solução:** Migração para uma **Arquitetura Serverless** de Static Website Hosting, reduzindo o **TCO (Total Cost of Ownership)** em aproximadamente **98%**.
-
----
-
-## 🛠️ Stack Tecnológica & Decisões Técnicas
-
-| Ferramenta | Ícone | Justificativa Técnica |
-| :--- | :---: | :--- |
-| **Amazon S3** | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" width="45"> | Hosting de objetos com durabilidade de 11 noves e custo-benefício imbatível. |
-| **Terraform** | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/terraform/terraform-original.svg" width="45"> | Provisionamento via IaC para garantir imutabilidade e evitar o "clique-ops". |
+O foco não foi apenas a migração, mas a implementação de **Infraestrutura como Código (IaC)** para garantir que o ambiente fosse escalável, seguro e totalmente documentado.
 
 ---
 
-## 📸 Galeria de Engenharia (Case Study)
+## 🏗️ Desafio de Negócio vs. Solução Técnica
 
-### 🔹 Fase 1: Planejamento e Init (IaC Workflow)
-*Validação do plano de execução e integridade do código.*
-![Terraform I](img/Terraform%20I.png)
-![Terraform I](img/Terraform%20II.png)
-![Terraform I](img/Terraform%20III.png)
+**Cenário Anterior:** O cliente operava em instâncias EC2 gerenciadas manualmente (SSH), com custos fixos de computação, necessidade de patching de OS e riscos de downtime por falta de redundância.
 
----
+**Arquitetura Implementada:**
+* **Engine de Hosting:** Amazon S3 configurado para entrega de conteúdo estático.
+* **Provisionamento:** Terraform com gerenciamento de estado (State Management).
+* **Segurança:** Implementação de políticas de acesso restritivas (Bucket Policies) e bloqueio de acesso público indevido via código.
 
-### 🔹 Fase 2: Automação e Outputs
-*Extração automatizada do endpoint público para entrega contínua.*
-![Terraform IV](img/Terraform%20IV.png)
+> **Resultado:** Redução de **98% no TCO (Total Cost of Ownership)** e eliminação completa da sobrecarga de gerenciamento de servidores.
 
 ---
 
-### 🔹 Fase 3: Segurança e Políticas de Bucket (Compliance)
-*Implementação de Bucket Policies restritivas via Terraform (Least Privilege).*
-![Terraform I](img/Terraform%20IX.png)
-![Terraform I](img/Terraform%20V.png)
-![Terraform V](img/Terraform%20VI.png)
+## 🛠️ Stack Tecnológica & Decisões de Design
+
+| Componente | Ferramenta | Decisão Técnica |
+| :--- | :--- | :--- |
+| **IaC** | **Terraform** | Escolhido para evitar o "Configuration Drift" e permitir rollbacks rápidos. |
+| **Storage** | **Amazon S3** | Escolhido pela durabilidade de 99.999999999% (11 noves) e custo próximo a zero em ociosidade. |
+| **Segurança** | **IAM & Bucket Policies** | Aplicação do princípio de **Least Privilege** para garantir que apenas o necessário fosse exposto. |
 
 ---
 
-### 🔹 Fase 4: Validação Final (Portal Aria.net Live)
-*O resultado: Infraestrutura moderna, segura e extremamente econômica.*
-![Terraform I](img/Terraform%20VIII.png)
-![Terraform I](img/Terraform%20VII.png)
-![Site Final](img/image_b791f0.png.png)
+## 🚀 Ciclo de Vida do Projeto (Case Study)
+
+### 1. Governança via Terraform (IaC)
+Diferente de uma criação manual, utilizei o Terraform para definir o ciclo de vida do bucket, tags de organização e configurações de index/error documents.
+![Planejamento IaC](img/Terraform%20I.png)
+![Build do Código](img/Terraform%20IV.png)
+
+### 2. Segurança e Compliance
+A maior preocupação em buckets S3 é a segurança. Implementei via código a **Bucket Policy** necessária para o hosting, mantendo o controle granular sobre quem e o que pode ser acessado.
+![Políticas de Segurança](img/Terraform%20V.png)
+![Output de Endpoint](img/Terraform%20VI.png)
+
+### 3. Entrega Final e Validação
+O portal Aria.net agora reside em uma infraestrutura global, resiliente e de baixo custo, acessível através de um endpoint otimizado.
+![Site Live](img/image_b791f0.png.png)
 
 ---
 
-## 🏁 Conclusão
-O projeto **Aria.net** prova que a simplicidade técnica, quando bem executada via automação, é o caminho mais curto para a eficiência operacional na Nuvem.
+## 🧠 Lições Aprendidas e Troubleshooting
+
+* **Gerenciamento de Erros:** Configuração de páginas de erro 404 personalizadas para melhorar a UX (User Experience).
+* **IaC State:** Entendimento da importância do arquivo `.tfstate` para manter a consistência entre o código e o que realmente existe na AWS.
+* **FinOps:** Demonstração prática de como uma mudança de arquitetura (EC2 -> S3) pode salvar centenas de dólares anuais para uma operação simples.
 
 ---
-*Documentação desenvolvida por Gustavo Gomes | AWS Cloud Portfolio*
+
+## 🎯 Conclusão e Mindset
+
+Este projeto demonstra que a maturidade em Cloud não é sobre usar os serviços mais caros, mas sobre usar os **serviços certos para o problema certo**. A automação com Terraform garantiu que o Aria.net tenha agora uma infraestrutura resiliente, auditável e econômica.
+
+---
+**Autor:** [Gustavo Gomes](https://github.com/gustavogomes43) | *Cloud & DevOps Enthusiast*
