@@ -20,7 +20,7 @@ Solução FinOps: Ao migrar para S3, implementamos o conceito de custo zero em o
 **🏗️ Arquitetura de Modernização & FinOps**
 A imagem abaixo ilustra a transformação do ambiente legado para a solução moderna:
 
-![Arquitetura de Modernização e FinOps](imagem_11.png)
+![Arquitetura de Modernização e FinOps](img/imagem_11.png)
 
 * **Engine de Hosting:** Amazon S3 configurado para entrega de conteúdo estático.
 * **Provisionamento:** Terraform com gerenciamento de estado (State Management).
