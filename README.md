@@ -80,6 +80,44 @@ O que esta imagem mostra: O portal Aria.net operando em produção. O site agora
 
 ---
 
+## 💰 Business Case & ROI (Impacto de Negócio)
+
+A migração do Aria.net para uma arquitetura Serverless S3 não foi apenas uma mudança técnica, mas uma **estratégia de otimização de lucro**. Abaixo, detalhamos como a eliminação da ociosidade impacta diretamente o EBITDA da operação.
+
+### 1. Estimativa de Custos Operacionais (Anual)
+
+| Item | Infraestrutura Legada (EC2) | Solução Moderna (Aria.net - S3) | Economia |
+| :--- | :--- | :--- | :--- |
+| **Computação/Hosting** | $480 (T3.small c/ EBS) |$ 6 (S3 Standard Storage) | -98.7% |
+| **Horas de Suporte (Ops)** | $2.400 (Patching/Reboots) |$ 0 (Totalmente Gerenciado) | -100% |
+| **Segurança/Auditoria** | Risco de Drift Manual | Integridade via IaC (Terraform) | Compliance |
+| **TOTAL** | **$ 2.880** | **$ 6** | **Redução Drástica** |
+
+### 2. Impacto Estratégico (Oportunidade)
+
+* **Eliminação de Ociosidade:** No modelo EC2, pagava-se 24/7 mesmo com zero acessos de madrugada. Com o S3, o custo escala de forma invisível.
+* **Agilidade de Mudança:** O tempo para provisionar uma nova versão do ambiente caiu de **45 minutos (manual)** para **menos de 2 minutos (Terraform)**.
+* **Resiliência e SLA:** A durabilidade nativa do S3 (11 noves) elimina a necessidade de planos de Disaster Recovery complexos e caros para sites estáticos.
+
+### 3. Cálculo do ROI Final
+
+Considerando o esforço de migração e automação estimado em 20 horas de engenharia ($ 1.000):
+
+$$ROI = \frac{(\text{Economia Anual de OpEx}) - \text{Custo de Migração}}{\text{Custo de Migração}}$$
+
+* **Ganhos Totais (Economia Direta):** $ 2.874
+* **Investimento:** $ 1.000
+* **ROI Estimado:** **~187% no primeiro ano.**
+* **Payback:** O projeto se paga em **4 meses** apenas com a economia de fatura AWS e horas de suporte.
+
+---
+
+## 📈 Conclusão FinOps
+
+O projeto Aria.net é a prova de que a modernização para Cloud não precisa ser cara. Ao migrar para Serverless e utilizar Terraform, transformamos um custo fixo e arriscado em uma **operação de custo variável insignificante**, com 100% de previsibilidade e segurança via código.
+
+---
+
 ## 🧠 Lições Aprendidas e Troubleshooting
 
 * **Gerenciamento de Erros:** Configuração de páginas de erro 404 personalizadas para melhorar a UX (User Experience).
