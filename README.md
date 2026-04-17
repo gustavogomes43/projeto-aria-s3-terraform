@@ -93,4 +93,4 @@ O que esta imagem mostra: O portal Aria.net operando em produção. O site agora
 Este projeto demonstra que a maturidade em Cloud não é sobre usar os serviços mais caros, mas sobre usar os **serviços certos para o problema certo**. A automação com Terraform garantiu que o Aria.net tenha agora uma infraestrutura resiliente, auditável e econômica.
 
 ---
-**Autor:** [Gustavo Gomes](https://github.com/gustavogomes43) | *Cloud & DevOps Enthusiast*
+**Autor:** Gustavo Gomes - Cloud & Devops*
